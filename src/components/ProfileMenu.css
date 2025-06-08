@@ -1,0 +1,159 @@
+.profile-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-trigger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.profile-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #3498db;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.profile-icon:hover {
+  background-color: #2980b9;
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.5rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  min-width: 240px;
+  z-index: 1000;
+  animation: slideDown 0.2s ease;
+}
+
+.profile-header {
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.profile-name {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 1.1rem;
+}
+
+.profile-email {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+.profile-role {
+  color: #3498db;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-top: 0.25rem;
+}
+
+.profile-menu-items {
+  padding: 0.5rem 0;
+}
+
+/* Menu Item Styles */
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  color: #2c3e50 !important;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  background: white;
+  width: 100%;
+  text-align: left;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.menu-item i {
+  width: 20px;
+  color: #3498db;
+}
+
+.menu-item:hover {
+  background-color: #e8f1ff !important;
+  color: #2c3e50 !important;
+}
+
+.menu-divider {
+  height: 1px;
+  background-color: #eee;
+  margin: 0.5rem 0;
+}
+
+/* Logout Button Styles */
+.menu-item.logout {
+  color: #e74c3c !important;
+}
+
+.menu-item.logout i {
+  color: #e74c3c;
+}
+
+.menu-item.logout:hover {
+  background-color: #fff5f5 !important;
+  color: #e74c3c !important;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .profile-dropdown {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    border-radius: 12px 12px 0 0;
+    animation: slideUp 0.3s ease;
+  }
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+} 

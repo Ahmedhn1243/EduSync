@@ -1,0 +1,275 @@
+.results-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px;
+}
+
+.results-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  width: 100%;
+  max-width: 800px;
+  animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.results-card h1 {
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.assessment-details {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 20px;
+  border-radius: 15px;
+  background: #f8f9fa;
+}
+
+.assessment-details h2 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+
+.assessment-details p {
+  color: #6c757d;
+  margin: 8px 0;
+  font-size: 1.1rem;
+}
+
+.score-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin: 30px 0;
+}
+
+.score-display {
+  text-align: center;
+}
+
+.score-circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 15px solid #4CAF50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  position: relative;
+  background: white;
+  box-shadow: 0 5px 15px rgba(76, 175, 80, 0.2);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(76, 175, 80, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+  }
+}
+
+.score-number {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.score-max {
+  font-size: 1.8rem;
+  color: #6c757d;
+}
+
+.score-percentage {
+  font-size: 1.5rem;
+  color: #4CAF50;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.score-details {
+  width: 100%;
+  max-width: 600px;
+  background: #f8f9fa;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #e9ecef;
+  transition: background-color 0.3s;
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.detail-row:hover {
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.label {
+  color: #6c757d;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.value {
+  color: #2c3e50;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.percentage {
+  color: #4CAF50;
+  font-weight: 500;
+  font-size: 1rem;
+  min-width: 100px;
+  text-align: right;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.btn {
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: #4CAF50;
+  color: white;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+.btn-primary:hover {
+  background: #43a047;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
+
+.loading-spinner {
+  color: #4CAF50;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 20px;
+}
+
+.error-message {
+  color: #dc3545;
+  text-align: center;
+  padding: 20px;
+  font-size: 1.2rem;
+  background: #fff;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px rgba(220, 53, 69, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .results-card {
+    padding: 20px;
+  }
+
+  .score-circle {
+    width: 150px;
+    height: 150px;
+    border-width: 10px;
+  }
+
+  .score-number {
+    font-size: 2.5rem;
+  }
+
+  .score-max {
+    font-size: 1.3rem;
+  }
+
+  .detail-row {
+    flex-direction: column;
+    text-align: center;
+    gap: 5px;
+  }
+
+  .percentage {
+    text-align: center;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .results-container {
+    background: linear-gradient(135deg, #1a1c20 0%, #2c3e50 100%);
+  }
+
+  .results-card {
+    background: #2c3e50;
+  }
+
+  .results-card h1,
+  .assessment-details h2,
+  .score-number {
+    color: #fff;
+  }
+
+  .assessment-details,
+  .score-details {
+    background: #1a1c20;
+  }
+
+  .assessment-details p,
+  .label {
+    color: #a0aec0;
+  }
+
+  .value {
+    color: #fff;
+  }
+
+  .detail-row:hover {
+    background-color: #243342;
+  }
+} 
